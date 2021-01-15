@@ -1,12 +1,12 @@
 # DocumentCloud Command Line Interface
 
+UPDATE: The old [python-documentcloud](https://github.com/datadesk/python-documentcloud) has been deprecated, breaking the functionality of this project. I am working on using the [current version](https://github.com/MuckRock/python-documentcloud/) of the library to get this tool working again.
+
 A command line interface to the [DocumentCloud](https://www.documentcloud.org/) service, written in Python.
 
 I started this project because I needed a way to bulk upload a directory of documents where I had already uploaded some of the documents. I needed a more flexible client that let me use common Unix command line tools like `find`, `ls`, `grep` and `xargs` to provide input to the program. Similarly, I imagine the output of this program being piped to tools like [csvkit](https://csvkit.readthedocs.io/en/1.0.3/) or [ndjson-cli](https://github.com/mbostock/ndjson-cli).
 
 This project serves a need for me when I need programatic interaction with the DocumentCloud API, but don't want to have to write the same boilerplate code, or bootstrap a coding project to upload some documents or extract a list of entities.
-
-This project relies on the [python-documentcloud](https://github.com/datadesk/python-documentcloud) library for most of the heavy lifting in working with the DocumentCloud API.
 
 ## Supported functionality
 
