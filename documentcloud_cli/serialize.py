@@ -29,7 +29,6 @@ def serialize_document(doc):
         'file_hash',
         'contributor',
         'contributor_organization',
-        'display_language',
         'data',
         'sections',
         'annotations',

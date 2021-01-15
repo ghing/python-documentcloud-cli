@@ -1,6 +1,6 @@
 # DocumentCloud Command Line Interface
 
-UPDATE: The old [python-documentcloud](https://github.com/datadesk/python-documentcloud) has been deprecated, breaking the functionality of this project. I am working on using the [current version](https://github.com/MuckRock/python-documentcloud/) of the library to get this tool working again.
+UPDATE: The old [python-documentcloud](https://github.com/datadesk/python-documentcloud) has been deprecated, breaking the functionality of this project. I am working on using the [current version](https://github.com/MuckRock/python-documentcloud/) of the library, but some functionality may not work.
 
 A command line interface to the [DocumentCloud](https://www.documentcloud.org/) service, written in Python.
 
@@ -42,6 +42,15 @@ xargs -I % sh -c "documentcloud upload --project 'Test Project' %"
 
 ```
 documentcloud projects get "Test Project" | ndjson-split d.projects[0].document_ids
+```
+
+### Get CSV of all document details for documents in a project
+
+```
+documentcloud projects get "Test Project" | \
+ndjson-split d.projects[0].document_ids | \
+xargs -n 1 -I {} documentcloud documents get {} | \
+in2csv -f ndjson
 ```
 
 ### Get CSV of organization entities in a document

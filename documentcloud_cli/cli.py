@@ -6,7 +6,8 @@ import os
 import re
 import sys
 
-from documentcloud import DocumentCloud, DoesNotExistError
+from documentcloud import DocumentCloud
+from documentcloud.exceptions import DoesNotExistError
 
 from documentcloud_cli.serialize import (
     serialize_document,
