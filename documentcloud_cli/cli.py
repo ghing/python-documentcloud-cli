@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import argparse
 import json
 import os
@@ -6,7 +8,7 @@ import sys
 
 from documentcloud import DocumentCloud, DoesNotExistError
 
-from .serialize import (
+from documentcloud_cli.serialize import (
     serialize_document,
     serialize_entity,
     serialize_project,
@@ -186,3 +188,7 @@ def main():
     args = parser.parse_args()
 
     args.func(args)
+
+
+if __name__ == "__main__":
+    main()
